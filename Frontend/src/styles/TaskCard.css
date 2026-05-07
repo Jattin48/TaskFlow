@@ -1,0 +1,321 @@
+/* TaskCard.css */
+
+.task-card {
+    background-color: var(--bg-surface);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-sm);
+    padding: 16px;
+    cursor: grab;
+    transition: transform 0.2s, box-shadow 0.2s;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.task-card:hover {
+    box-shadow: var(--shadow-md);
+    border-color: var(--text-muted);
+}
+
+.task-card:active {
+    cursor: grabbing;
+}
+
+.task-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 8px;
+}
+
+.task-card-header h4 {
+    font-size: 0.95rem;
+    color: var(--text-primary);
+    font-weight: 500;
+    line-height: 1.4;
+}
+
+.task-menu {
+    position: relative;
+}
+
+.menu-btn {
+    background: transparent;
+    border: none;
+    color: var(--text-muted);
+    font-size: 1.2rem;
+    cursor: pointer;
+    padding: 0 4px;
+    border-radius: 4px;
+}
+
+.menu-btn:hover {
+    background-color: var(--bg-hover);
+    color: var(--text-primary);
+}
+
+.task-options {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: var(--bg-main);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-sm);
+    box-shadow: var(--shadow-md);
+    padding: 4px;
+    z-index: 100;
+    min-width: 100px;
+}
+
+.task-options button {
+    width: 100%;
+    text-align: left;
+    background: transparent;
+    border: none;
+    color: var(--danger);
+    padding: 8px 12px;
+    font-size: 0.85rem;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.task-options button:hover {
+    background-color: rgba(239, 68, 68, 0.1);
+}
+
+.task-description {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.task-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.75rem;
+}
+
+.priority-badge {
+    padding: 2px 8px;
+    border-radius: 4px;
+    color: white;
+    font-weight: 600;
+    text-transform: capitalize;
+    letter-spacing: 0.5px;
+}
+
+.due-date {
+    color: var(--text-muted);
+}
+
+.task-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.tag {
+    background-color: var(--bg-hover);
+    color: var(--text-secondary);
+    font-size: 0.7rem;
+    padding: 2px 8px;
+    border-radius: 12px;
+    border: 1px solid var(--border-light);
+}
+
+.task-subtasks {
+    display: flex;
+    align-items: center;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+
+.subtask-count::before {
+    content: '☑';
+    margin-right: 4px;
+    color: var(--accent-color);
+}
+
+.task-assignee {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.85rem;
+    color: var(--text-primary);
+    padding-top: 8px;
+    border-top: 1px solid var(--border-light);
+}
+
+.avatar {
+    background-color: var(--bg-hover);
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-size: 0.7rem;
+}
+
+/* Comments Section */
+.task-comments-preview {
+    background-color: var(--bg-main);
+    padding: 8px;
+    border-radius: var(--radius-sm);
+    margin-top: 8px;
+}
+
+.task-comments-preview h5 {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    margin-bottom: 6px;
+    text-transform: uppercase;
+}
+
+.comment-preview {
+    font-size: 0.8rem;
+    margin-bottom: 4px;
+}
+
+.comment-preview strong {
+    color: var(--accent-color);
+    margin-right: 6px;
+}
+
+.comment-preview p {
+    display: inline;
+    color: var(--text-secondary);
+}
+
+.comment-count {
+    display: block;
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    margin-top: 4px;
+    text-align: right;
+}
+
+.task-comment-form {
+    display: flex;
+    gap: 8px;
+    margin-top: 8px;
+}
+
+.task-comment-form input {
+    flex: 1;
+    background-color: var(--bg-input);
+    border: 1px solid var(--border-color);
+    color: var(--text-primary);
+    padding: 6px 10px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.task-comment-form input:focus {
+    border-color: var(--accent-color);
+}
+
+.task-comment-form button {
+    background-color: var(--bg-hover);
+    color: var(--text-primary);
+    border: none;
+    padding: 0 10px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.task-comment-form button:hover:not(:disabled) {
+    background-color: var(--accent-color);
+    color: white;
+}
+
+.task-comment-form button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* Status Quick Actions */
+.status-actions {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 4px;
+    margin-top: 12px;
+}
+
+.status-actions button {
+    background-color: var(--bg-hover);
+    border: 1px solid transparent;
+    color: var(--text-secondary);
+    font-size: 0.7rem;
+    padding: 4px 0;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.status-actions button:hover {
+    background-color: var(--bg-surface);
+    border-color: var(--accent-color);
+    color: var(--accent-color);
+}
+
+/* TaskCard.css - Upgraded */
+.task-card {
+    background-color: var(--bg-surface);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-sm);
+    padding: 16px;
+    cursor: grab;
+    transition: all 0.2s cubic-bezier(0.2, 0, 0, 1);
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    position: relative;
+}
+
+.task-card:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    border-color: rgba(255, 255, 255, 0.15);
+    transform: translateY(-2px);
+}
+
+.task-card:active {
+    cursor: grabbing;
+    transform: scale(0.98) rotate(-1deg); /* Gives a physical "picked up" feel */
+    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.3);
+    z-index: 50;
+}
+
+.task-card-header h4 {
+    font-size: 0.95rem;
+    color: var(--text-primary);
+    font-weight: 600;
+    line-height: 1.4;
+    transition: color 0.2s;
+}
+
+.task-card:hover .task-card-header h4 {
+    color: var(--accent-color);
+}
+
+/* Task Priority Badges - Made more vibrant */
+.priority-badge {
+    padding: 3px 10px;
+    border-radius: 12px;
+    color: white;
+    font-weight: 700;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+/* Rest of your existing TaskCard styles... */

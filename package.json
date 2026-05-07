@@ -1,0 +1,22 @@
+{
+  "name": "taskflow",
+  "version": "1.0.0",
+  "description": "Professional Task Management & Team Collaboration Platform",
+  "main": "Backend/index.js",
+  "scripts": {
+    "start": "node start.js",
+    "backend": "cd Backend && npm run dev",
+    "frontend": "cd Frontend && npm run dev",
+    "build": "cd Frontend && npm run build",
+    "install-all": "npm install && cd Backend && npm install && cd ../Frontend && npm install"
+  },
+  "keywords": [
+    "task",
+    "management",
+    "collaboration",
+    "team",
+    "productivity"
+  ],
+  "author": "Your Name",
+  "license": "Proprietary"
+}

@@ -1,0 +1,137 @@
+/* Sidebar.css */
+
+.sidebar {
+    width: 260px;
+    background-color: var(--bg-surface);
+    border-right: 1px solid var(--border-color);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    transition: all 0.3s ease;
+}
+
+.sidebar-logo {
+    height: 70px;
+    display: flex;
+    align-items: center;
+    padding: 0 24px;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    border-bottom: 1px solid var(--border-color);
+    gap: 12px;
+}
+
+.logo-icon {
+    color: var(--accent-color);
+    font-size: 1.8rem;
+    text-shadow: 0 0 10px var(--accent-glow);
+}
+
+.sidebar-nav {
+    flex: 1;
+    padding: 24px 16px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.nav-section {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.nav-section-title {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--text-muted);
+    font-weight: 600;
+    padding: 0 12px;
+    margin-bottom: 4px;
+}
+
+.nav-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 12px;
+    border-radius: var(--radius-sm);
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    background: transparent;
+    border: none;
+    width: 100%;
+    cursor: pointer;
+    text-align: left;
+}
+
+.nav-item:hover {
+    background-color: rgba(255, 255, 255, 0.03);
+    color: var(--text-primary);
+}
+
+.nav-item.active {
+    background-color: rgba(139, 92, 246, 0.1);
+    color: var(--accent-color);
+    border-right: 3px solid var(--accent-color);
+}
+
+.nav-icon {
+    font-size: 1.2rem;
+    opacity: 0.8;
+}
+
+.sidebar-footer {
+    padding: 16px;
+    border-top: 1px solid var(--border-color);
+}
+
+.sidebar-footer .nav-item {
+    color: var(--text-muted);
+}
+.sidebar-footer .nav-item:hover {
+    color: var(--danger);
+    background-color: rgba(239, 68, 68, 0.05);
+}
+
+/* Sidebar.css - Upgraded */
+.sidebar {
+    background-color: rgba(30, 41, 59, 0.4);
+    backdrop-filter: blur(10px); /* Makes the sidebar slightly translucent against the global background */
+    border-right: 1px solid rgba(255, 255, 255, 0.05);
+    /* ... existing styles */
+}
+
+.nav-item {
+    position: relative;
+    overflow: hidden;
+    /* ... existing styles */
+}
+
+/* Smooth active pill indicator instead of a hard border */
+.nav-item.active {
+    background-color: rgba(139, 92, 246, 0.15);
+    color: #fff;
+    border: none;
+}
+
+.nav-item.active::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 60%;
+    width: 4px;
+    background-color: var(--accent-color);
+    border-radius: 0 4px 4px 0;
+    box-shadow: 0 0 10px var(--accent-glow);
+}
+
+/* Rest of your existing Sidebar styles... */

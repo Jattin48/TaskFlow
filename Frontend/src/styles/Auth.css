@@ -1,0 +1,211 @@
+/* Auth.css */
+
+.auth-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 24px;
+    width: 100%;
+    /* The background is handled globally in index.css, allowing the radial gradients to shine through */
+}
+
+.auth-card {
+    width: 100%;
+    max-width: 420px;
+    background-color: rgba(30, 41, 59, 0.7); /* Slightly transparent surface */
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    padding: 40px;
+    box-shadow: var(--shadow-lg);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    animation: fadeUpIn 0.4s ease-out forwards;
+}
+
+/* Premium Mode Enhancements for Auth Card */
+body.premium-mode .auth-card {
+    background-color: rgba(15, 20, 35, 0.8);
+    border-color: rgba(54, 214, 255, 0.25);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+.auth-header {
+    text-align: center;
+    margin-bottom: 32px;
+}
+
+.auth-header h1 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 8px;
+    letter-spacing: -0.02em;
+}
+
+.auth-header p {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-group label {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+    letter-spacing: 0.01em;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px 16px;
+    background-color: var(--bg-input);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-sm);
+    color: var(--text-primary);
+    font-size: 0.95rem;
+    transition: all 0.2s ease;
+    outline: none;
+}
+
+.form-group input::placeholder {
+    color: var(--text-muted);
+    opacity: 0.6;
+}
+
+.form-group input:hover {
+    border-color: var(--border-light);
+}
+
+.form-group input:focus {
+    border-color: var(--accent-color);
+    background-color: rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 0 3px var(--accent-glow);
+}
+
+/* Premium mode input focus */
+body.premium-mode .form-group input:focus {
+    border-color: #36d6ff;
+}
+
+.auth-card form .btn {
+    width: 100%;
+    margin-top: 12px;
+    padding: 14px;
+    font-size: 1rem;
+    border-radius: var(--radius-md); /* Slightly rounder button for auth screens */
+}
+
+.auth-footer {
+    margin-top: 24px;
+    text-align: center;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+.auth-footer a {
+    color: var(--accent-color);
+    font-weight: 600;
+    margin-left: 4px;
+}
+
+.auth-footer a:hover {
+    color: var(--text-primary);
+    text-decoration: none;
+}
+
+/* Entry Animation */
+@keyframes fadeUpIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Fallback for the plain signup.jsx (if you decide to use it) */
+form > div {
+    margin-bottom: 16px;
+}
+
+/* Auth.css - Upgraded */
+.auth-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 24px;
+    width: 100%;
+}
+
+.auth-card {
+    width: 100%;
+    max-width: 420px;
+    background-color: rgba(15, 23, 42, 0.6); 
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-top: 1px solid rgba(255, 255, 255, 0.15); /* Glass edge reflection */
+    border-radius: var(--radius-lg);
+    padding: 40px;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    animation: fadeUpIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+body.premium-mode .auth-card {
+    background-color: rgba(10, 15, 30, 0.7);
+    border-color: rgba(54, 214, 255, 0.2);
+    border-top-color: rgba(54, 214, 255, 0.5);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6), 0 0 40px rgba(54, 214, 255, 0.1);
+}
+
+.auth-header h1 {
+    font-size: 2rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, #fff 0%, #cbd5e1 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 8px;
+    letter-spacing: -0.03em;
+}
+
+/* Rest of your existing auth-header and form-group styles... */
+
+.form-group input:focus-visible {
+    border-color: var(--accent-color);
+    background-color: rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0 0 4px var(--accent-glow);
+    transform: translateY(-1px); /* Micro-lift on focus */
+}
+
+body.premium-mode .form-group input:focus-visible {
+    border-color: #36d6ff;
+    box-shadow: 0 0 0 4px rgba(54, 214, 255, 0.25);
+}
+
+.auth-card form .btn {
+    width: 100%;
+    margin-top: 16px;
+    padding: 14px;
+    font-size: 1.05rem;
+    border-radius: var(--radius-md);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.auth-card form .btn:active {
+    transform: scale(0.98); /* Tactile click */
+}
+
+@keyframes fadeUpIn {
+    0% { opacity: 0; transform: translateY(30px) scale(0.95); }
+    100% { opacity: 1; transform: translateY(0) scale(1); }
+}

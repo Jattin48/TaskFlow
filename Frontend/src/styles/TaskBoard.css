@@ -1,0 +1,78 @@
+/* TaskBoard.css */
+
+.task-board {
+    display: flex;
+    gap: 24px;
+    height: 100%;
+    overflow-x: auto;
+    padding-bottom: 16px;
+    align-items: flex-start;
+}
+
+.task-column {
+    flex: 0 0 320px;
+    background-color: rgba(30, 41, 59, 0.5); /* Semi-transparent surface */
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    display: flex;
+    flex-direction: column;
+    max-height: calc(100vh - 120px);
+}
+
+.column-header {
+    padding: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--border-color);
+    background-color: var(--bg-surface);
+    border-radius: var(--radius-md) var(--radius-md) 0 0;
+}
+
+.column-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.status-indicator {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    box-shadow: 0 0 8px currentColor;
+}
+
+.column-title h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.column-count {
+    background-color: var(--bg-hover);
+    color: var(--text-secondary);
+    font-size: 0.8rem;
+    font-weight: 600;
+    padding: 2px 8px;
+    border-radius: 12px;
+}
+
+.tasks-list {
+    padding: 16px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    flex: 1;
+}
+
+/* Empty state styling */
+.tasks-list:empty::after {
+    content: 'No tasks here';
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    padding: 20px 0;
+    border: 2px dashed var(--border-color);
+    border-radius: var(--radius-sm);
+}
