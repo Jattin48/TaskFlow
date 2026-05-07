@@ -42,6 +42,7 @@ function Login({ onLogin }) {
 
             onLogin(data.token, data.user);
             navigate('/dashboard');
+        // eslint-disable-next-line no-unused-vars
         } catch (err) {
             setError('Server connection error');
         } finally {
