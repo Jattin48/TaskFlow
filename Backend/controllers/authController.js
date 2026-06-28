@@ -8,6 +8,12 @@ const register = async (req, res) => {
         if (!name || !email || !password) {
             return res.status(400).json({ success: false, message: 'Please provide all required fields' });
         }
+        if (password.length < 8 || password.length > 20) {
+            return res.status(400).json({ 
+                success: false, 
+                message: 'Password must be between 8 and 20 characters long' 
+            });
+        }
 
         let user = await User.findOne({ email });
         if (user) {
